@@ -191,5 +191,186 @@ repeat{
 ```
 <hr/>
 
+
+### 옵셔널
+
+* 옵셔널은 값이 있을수도 없을수도 있는 경우
+```swift
+var number: Int? = nil
+
+var optionalName: String? = "KIM"
+var requiredName: String = optionalName // error
+```
+
+옵셔널로 선언된 변수에 저장된 값을 옵셔널이 아닌 변수에 저장할 수 없다.
+이 경우 옵셔널 바인딩을 사용해야 한다.
+
+<hr/>
+
+### 옵셔널 바인딩
+* 명시적 해제
+    * 강제 해제
+    * 비강제 해제(옵셔널 바인딩)
+* 묵시적 해제
+    * 컴파일러에 의한 자동 해제
+    * 옵셔널의 묵시적 해제
+
+```swift
+// 강제 해제 -> ! 사용
+var number: Int? = 3
+
+print(number)
+print(number!)
+```
+
+```swift
+// 비강제 해제(옵셔널 바인딩)
+var number: Int? = 3
+
+print(number)
+print(number!)
+
+// if - else를 사용한 옵셔널 바인딩
+if let result = number{
+    print(result)
+} else{
+    
+}
+
+// guard를 사용한 옵셔널 바인딩
+func optinalBindingExample(){
+    var number: Int? = 3
+    guard let result = number else { return }
+    print(result)
+}
+
+optinalBindingExample()
+```
+
+```swift
+// 컴파일러에 의한 자동 해제
+let value: Int? = 6
+
+if value == 6{
+    print("value가 6입니다.")
+} else{
+    print("value는 6이 아닙니다.")
+}
+```
+
+```swift
+// 옵셔널의 묵시적 해제
+let numberStr = "12"
+
+var strToInt: Int! = Int(numberStr)
+
+print(strToInt + 1)
+```
+
+<hr/>
+
+### 구조체
+* 구조체와 클래스는 Pascal 표기법으로 표기
+
+```swift
+struct structName {
+    // property
+    // method
+}
+```
+
+```swift
+struct User{
+    var nickname: String
+    var age: Int
+    
+    func getInformation(){
+        print(nickname, age)
+    }
+}
+
+var user = User(nickname: "ironMan", age: 42)
+user.getInformation()
+
+user.nickname = "sheHulk"
+user.getInformation()
+```
+
+<hr/>
+
+### 클래스
+
+```swift
+class className{
+    // property
+    // method
+}
+```
+
+```swift
+class Dog{
+    var name: String = ""
+    var age: Int = 0
+    
+    init(){
+        
+    }
+    
+    func getInformation(){
+        print(name, age)
+    }
+}
+
+var dog = Dog()
+dog.name = "choco"
+dog.age = 12
+dog.getInformation()
+
+dog.age = 10
+dog.getInformation()
+```
+
+<hr/>
+
+### 클래스 생성자
+* 클래스 구조체 또는 열거형의 인스턴스를 사용하기 위한 준비 과정
+* 생성자의 이름을 다르게 해준다면, 여러개의 생성자를 만들 수 있다.
+
+
+```swift
+class User{
+    var nickname: String
+    var age: Int
+
+    init(nickname: String, age: Int){
+        self.nickname = nickname
+        self.age = age
+    }
+    
+    init(age: Int){
+        self.nickname = "sheHulk"
+        self.age = age
+    }
+    
+    deinit{
+        print("deinit User Class")
+    }
+    
+    func getInformation(){
+        print(nickname, age)
+    }
+}
+
+var firstUser = User(nickname: "ironMan", age: 42)
+firstUser.getInformation()
+
+var secondUser = User(age: 42)
+secondUser.getInformation()
+
+var thirdUser: User? = User(age: 24)
+thirdUser = nil // executed deinit
+```
+
+
 <!-- ```swift
 ``` -->
