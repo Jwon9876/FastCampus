@@ -371,6 +371,121 @@ var thirdUser: User? = User(age: 24)
 thirdUser = nil // executed deinit
 ```
 
+<hr/>
+
+### 프로퍼티
+
+* 저장 프로퍼티
+
+```swift
+struct DogStruct{
+    var name: String
+    let gender: String
+}
+
+var dogStruct = DogStruct(name: "Kim", gender: "M")
+dogStruct.name = "Park"
+dogStruct.gender = "F" // error
+
+
+let dogStruct2 = DogStruct(name: "Kim", gender: "F")
+dogStruct2.name = "Park" // error
+```
+dogStruct는 var 타입이므로 수정 가능하며, dogStruct.name 또한 var 타입으로 수정이 가능하다. 하지만 dogStruct.gender let 타입으로 수정이 불가능하다.
+
+
+```swift
+class DogClass{
+    var name: String
+    let gender: String
+    
+    init(name: String, gender: String) {
+        self.name = name
+        self.gender = gender
+    }
+}
+
+let dogClass = DogClass(name: "Kim", gender: "F")
+dogClass.name = "Park"
+```
+
+dogClass는 let 타입을 갖지만, 구조체와 달리 클래스 내의 var 타입을 갖는 프로퍼티를 수정할 수 있다. 
+
+```
+그 이유는 구조체는 변수 타입을 갖기에 let으로 선언된 인스턴스의 프로퍼티는 
+수정이 불가능하며, 클래스는 참조 타입을 갖기에 let으로 선언된 인스턴스의
+프로퍼티 수정이 가능하기 때문이다.
+```
+
+* 연산 프로퍼티
+
+```swift
+struct Stock{
+    var averagePrice: Int
+    var quantity: Int
+    var purchasePrice: Int{
+        get{
+            return averagePrice * quantity
+        }
+        set(newPrice){
+            averagePrice = newPrice / quantity
+        }
+//        set{
+//            averagePrice = newValue / quantity
+//        }
+    }
+}
+
+var stock = Stock(averagePrice: 2300, quantity: 3)
+stock.purchasePrice // getter
+stock.purchasePrice = 3000 // setter
+```
+
+* 프로퍼티 옵저버
+```swift
+class Account{
+    var credit: Int = 0{
+        willSet{
+            print("잔액이 \(credit)원에서 \(newValue)원으로 변경될 예정입니다.")
+        }
+        didSet{
+            print("잔액이 \(oldValue)원에서 \(credit)원으로 변경되었습니다.")
+        }
+    }
+}
+
+var account = Account()
+account.credit = 1000
+```
+
+* 타입 프로퍼티
+
+인스턴스 생성 없이 객체 내의 프로퍼티에 접근한다.
+
+저장 프로퍼티와 연산 프로퍼티에서만 사용 가능하다.
+
+`static` 키워드를 사용하여 정의한다.
+
+```swift
+struct SomeStruct{
+    static var storedTypeProperty = "Some value."
+    
+    static var computedTypeProperty: Int{
+        return 1
+    }
+}
+
+SomeStruct.storedTypeProperty = "Hello"
+print(SomeStruct.computedTypeProperty)
+
+```
+
+<hr/>
+
+
+
+
+
 
 <!-- ```swift
 ``` -->
