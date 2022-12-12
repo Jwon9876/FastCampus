@@ -482,6 +482,71 @@ print(SomeStruct.computedTypeProperty)
 
 <hr/>
 
+### 클래스와 구조체의 공통점과 차이점
+
+[개인적인 기준으로 가장 정확한 차이점을 알 수 있던 글](https://shark-sea.kr/entry/Swift-%EA%B5%AC%EC%A1%B0%EC%B2%B4%EC%99%80-%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%B0%A8%EC%9D%B4-struct-vs-class)
+
+### 공통점
+* 값을 저장할 프로퍼티를 선언할 수 있습니다.
+* 함수적 기능을 하는 메서드를 선언할 수 있습니다.
+* 내부 값 `.`을 사용하여 접근할 수 있습니다.
+* 생성자를 사용해 초기 상태를 설정할 수 있습니다.
+* extension을 사용하여 기능을 확장할 수 있습니다.
+* Protocol을 채택하여 기능을 설정할 수 있습니다.
+
+### 차이점
+
+* 클래스
+    * 참조 타입
+    * ARC로 메모리를 관리한다.
+    * 상속 가능하다.
+    * 타입 캐스팅을 통해 런타임에서 클래스 인스턴스의 타입을 확인할 수 있다.
+    * deinit을 사용하여 클래스 인스턴스의 메모리 할당을 해제할 수 있다.
+    * 같은 클래스 인스턴스를 여러 개의 변수에 할당한 뒤 값을 변경시키면 모든 변수에 영향을 줄 수 있다. (메모리가 복사 됨)
+
+* 구조체
+    * 값 타입
+    * 구조체 변수를 새로운 변수에 할당할 때마다 새로운 구조체가 할당됩니다.
+    * 같은 구조체를 여러 개의 변수에 할당한 뒤 값을 변경시키더라도 다른 변수에 영향을 주지 않는다. (값 자체를 복사한다.)
+
+
+```swift
+class SomeClass{
+    var count: Int = 0
+}
+
+var someClass1 = SomeClass()
+var someClass2 = someClass1
+var someClass3 = someClass2
+
+someClass3.count = 2
+print(someClass1.count)
+```
+
+```swift
+struct SomeStruct{
+    var count: Int = 0
+}
+
+var someStruct1 = SomeStruct()
+var someStruct2 = someStruct1
+var someStruct3 = someStruct2
+
+someStruct2.count = 3
+print(someStruct1.count)
+```
+
+```swift
+```
+
+```swift
+```
+
+```swift
+```
+
+<!-- ```swift
+``` -->
 
 
 
