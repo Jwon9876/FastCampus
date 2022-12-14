@@ -536,6 +536,172 @@ someStruct2.count = 3
 print(someStruct1.count)
 ```
 
+<hr/>
+
+### 상속
+
+```swift
+class ClassName: ParentClassName{
+    // subClass definition
+}
+```
+위와 같은 형태로 클래스를 생성하며, `final`키워드를 사용하여, 상속이 불가한 클래스를 만들거나, 하위 클래스에서 `override`가 불가능한 프로퍼티를 만들 수 있다.
+
+
+
+```swift
+class Vehichle{
+    var currentSpeed = 0.0
+//    final var currentSpeed = 0.0
+    var description: String{
+        return "travelling at \(currentSpeed) miles per hour"
+    }
+    
+    func makeNoise(){
+        print("Vehicle Noise")
+    }
+}
+
+
+class Bicycle: Vehichle{
+    var hasBasket = false
+}
+
+
+let bicycle = Bicycle()
+bicycle.currentSpeed = 15
+print(bicycle.currentSpeed) // 15.0
+
+
+
+
+class Train: Vehichle{
+    
+    override func makeNoise() {
+        super.makeNoise()
+        print("Train Noise")
+    }
+}
+
+let train = Train()
+train.makeNoise()
+// Vehicle Noise
+// Train Noise
+
+
+
+class Car: Vehichle{
+    
+    var gear = 1
+    override var description: String{
+        return super.description + "in gear \(gear)"
+    }
+    
+}
+
+let car = Car()
+car.currentSpeed = 30
+car.gear = 2
+print(car.description)
+// travelling at 30.0 miles per hourin gear 2
+
+
+class AutomaticCar: Car{
+    
+    override var currentSpeed: Double{
+        didSet{
+            gear = Int(currentSpeed / 10) + 1
+        }
+    }
+}
+
+let automaticCar = AutomaticCar()
+automaticCar.currentSpeed = 35.0
+print(automaticCar.description)
+// travelling at 35.0 miles per hourin gear 4
+```
+
+<hr/>
+
+### 타입 캐스팅
+
+* 인스턴스의 타입을 확인하거나 어떤 클래스의 인스턴스를 해당 클래스 계층 구조의 슈퍼 클래스나 서브 클래스로 취급하는 방법
+
+* `is`, `as` 키워드를 사용하여 타입 캐스팅
+
+```swift
+class MediaItem{
+    var name: String
+    
+    init(name: String){
+        self.name = name
+    }
+}
+
+class Movie: MediaItem{
+    var direction: String
+    init(name: String, direction: String){
+        self.direction = direction
+        super.init(name: name)
+    }
+}
+
+class Song: MediaItem{
+    var artist: String
+    
+    init(name: String, artist: String){
+        self.artist = artist
+        super.init(name: name)
+    }
+}
+
+let library = [
+    Movie(name: "스물", direction: "이병헌"),
+    Song(name: "Hello", artist: "Adele"),
+    Song(name: "It's my life", artist: "Bon Jovi"),
+    Movie(name: "헤어질 결심", direction: "박찬욱"),
+    Song(name: "Creep", artist: "RadioHead")
+]
+
+var movieCount = 0
+var songCount = 0
+
+for item in library{
+    if item is Movie{
+        movieCount += 1 // 2
+    } else{
+        songCount += 1 // 3
+    }
+}
+
+for item in library{
+    if let movie = item as? Movie{
+        print("Movie: \(movie.name), dir. \(movie.direction)")
+    } else if let song = item as? Song{
+        print("Song: \(song.name), by \(song.artist)")
+    }
+}
+// Movie: 스물, dir. 이병헌
+// Song: Hello, by Adele
+// Song: It's my life, by Bon Jovi
+// Movie: 헤어질 결심, dir. 박찬욱
+// Song: Creep, by RadioHead
+```
+
+<hr/>
+
+
+
+
+```swift
+```
+
+```swift
+```
+
+```swift
+```
+
 ```swift
 ```
 
