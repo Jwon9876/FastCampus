@@ -816,5 +816,54 @@ class SomeClass2: SomeProtocol5{
 }
 ```
 
+<hr/>
+
+### 익스텐션
+
+* 익스텐션이 타입에 추가할 수 있는 기능
+    * 연산 타입 프로퍼티 / 연산 인스턴스 프로퍼티
+    * 타입 메서드 / 인스턴스 메서드
+    * 이니셜라이저
+    * 서브 스크립트
+    * 중첩 타입
+    * 특정 프로토콜을 준수할 수 있도록 기능 추가
+
+
+```swift
+extension SomeType{
+    // 추가 기능
+}
+```
+
+```swift
+extension Int{
+    
+    var isEven: Bool{
+        return self % 2 == 0
+    }
+    
+    var isOdd: Bool{
+        return self % 2 == 1
+    }
+}
+
+var number = 3
+number.isOdd // true
+number.isEven // false
+
+// 익스텐션은 연산 프로퍼티는 추가할 수 있지만, 연산 프로퍼티는 추가할 수 없다.
+// 타입 옵저버도 추가할 수 없다.
+
+extension String{
+    func convertToInt() -> Int?{
+        return Int(self)
+    }
+}
+
+var str = "1"
+str.convertToInt() // 1
+```
+
+
 <!-- ```swift
 ``` -->
