@@ -740,18 +740,81 @@ guardTest(value: nil)
 
 <hr/>
 
+### 프로토콜
+
+* 특정 역할을 하기 위한 메서드, 프로퍼티, 기타 요구사항 등의 청사진
+
+
+
 ```swift
+protocol ProtocolName{
+    // something
+} 
 ```
 
 ```swift
+protocol FirstProtocol{
+    var name: Int{ get set }
+    var age: Int{ get }
+}
+
+protocol AnotherProtocol{
+    static var someTypeProperty: Int{ get set }
+    // 프로토콜에서 타입 프로퍼티를 사용하기 위해서는
+    // static 키워드를 사용해야한다.
+}
+
+protocol SomeProtocol{
+    
+}
+
+protocol SomeProtocol2{
+    
+}
+
+protocol SomeProtocol3{
+    func someTypeMethod()
+}
+
+protocol SomeProtocol4{
+    init(params: Int)
+}
+
+protocol SomeProtocol5{
+    init()
+}
+
+struct SomeStructure: SomeProtocol, SomeProtocol2{
+    
+}
+
+protocol FullName{
+    var fullName: String{ get set }
+    func printFullName()
+}
+
+struct Person: FullName{
+    var fullName: String
+    func printFullName() {
+        print(fullName)
+    }
+}
+
+class SomeClass: SomeSuperclass, FirstProtocol, SecondProtocol{
+    
+}
+
+class SomeClass2: SomeProtocol5{
+    required init(){
+        
+    }
+    // 구조체와 달리, 클래스에서는 프로토콜이 요구하는 생성자를 생성하려면
+    // required 식별자가 필요하다.
+
+    // 만약 클래스가 상속받을 수 없는 final 생성자라면
+    // required 식별자가 필요하지 않다.
+}
 ```
-
-<!-- ```swift
-``` -->
-
-
-
-
 
 <!-- ```swift
 ``` -->
