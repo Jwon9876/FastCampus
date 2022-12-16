@@ -864,6 +864,92 @@ var str = "1"
 str.convertToInt() // 1
 ```
 
+<hr/>
+
+### 열거형
+
+* 연관성이 있는 값을 모아 놓은 것을 말한다.
+
+
+```swift
+enum CompassPoint{
+    
+    //case north, south
+    case north
+    case south
+    case east
+    case west
+
+}
+
+var direction = CompassPoint.east
+
+direction = .west // west
+
+switch direction{
+case .north:
+    print("north")
+case .south:
+    print("south")
+case .east:
+    print("east")
+case .west:
+    print("west")
+}
+```
+
+```swift
+//  enum 타입에 raw value를 가지도록 할 수 있다.
+enum CompassPoint: String{
+    
+    case north = "북"
+    case south = "남"
+    case east = "동"
+    case west = "서"
+
+}
+
+var direction = CompassPoint.east
+
+direction = .west // 서
+
+switch direction{
+case .north:
+    print(direction.rawValue)
+case .south:
+    print(direction.rawValue)
+case .east:
+    print(direction.rawValue)
+case .west:
+    print(direction.rawValue)
+}
+
+var direction2 = CompassPoint(rawValue: "남") // south
+```
+
+```swift
+// 연관값
+enum PhoneError{
+    case unknown
+    case betteryLow(String)
+}
+
+var error = PhoneError.betteryLow("배터리가 곧 방전됩니다.") // 
+
+switch error{
+case .betteryLow(let message):
+    print(message)
+case .unknown:
+    print("알 수 없는 에러입니다.")
+}
+// 배터리가 곧 방전됩니다.
+```
+
+<!-- ```swift
+``` -->
+
+
+
 
 <!-- ```swift
 ``` -->
