@@ -1142,13 +1142,41 @@ doSomething4{
 }
 ```
 
-<!-- ```swift
-``` -->
+<hr/>
 
-<!-- ```swift
-``` -->
+### 고차함수
+
+* 고차함수는 다른 함수를 전달 인자로 받거나 함수 실행의 결과를 함수로 반환하는 함수이다.
+
+* `map`, `filter`, `reduce`
 
 
+```swift
+let numbers = [1, 2, 3, 4]
+let mapArr = numbers.map { (number) -> Int in
+    return number * 2
+}
 
-<!-- ```swift
-``` -->
+print(mapArr) // 2, 4, 6, 8
+
+let intArr = [10, 2, 30, 24, 5]
+let filterArr = intArr.filter { $0 > 5 }
+print(filterArr) // 10, 30, 24
+
+let someArr = [1, 2, 3, 4, 5]
+let reduceResult = someArr.reduce(0){(result: Int, element: Int) -> Int in
+    print(result, element)
+    return result + element
+}
+
+print(reduceResult) // 15
+
+let someArr2 = [1, 2, 3, 4, 5]
+let reduceResult2 = someArr.reduce(2){(result: Int, element: Int) -> Int in
+    print(result, element)
+    return result + element
+}
+
+print(reduceResult2) // 17
+```
+<hr/>
