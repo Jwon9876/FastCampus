@@ -945,9 +945,34 @@ case .unknown:
 // 배터리가 곧 방전됩니다.
 ```
 
-<!-- ```swift
-``` -->
+<hr/>
 
+### 옵셔널 체이닝
+
+* 옵셔널 체이닝은 옵셔널에 속해 있는 `nil`일 지도 모르는 프로퍼티, 메서드, 서브 스크립션 등을 가져오거나 호출할 때 사용할 수 있는 일련의 과정이다.
+
+```swift
+struct Developer{
+    let name: String
+}
+
+struct Company{
+    let name: String
+    var developer: Developer?
+}
+
+var developer = Developer(name: "Kim")
+var company = Company(name: "Cacao", developer: developer)
+
+print(company.developer)
+
+// 옵셔널 체이닝
+print(company.developer.name) // error
+print(company.developer?.name) // Optional("Kim")
+print(company.developer!.name) // Kim -> 강제 언래핑
+```
+
+<hr/>
 
 
 
