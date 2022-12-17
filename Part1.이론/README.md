@@ -974,6 +974,86 @@ print(company.developer!.name) // Kim -> 강제 언래핑
 
 <hr/>
 
+### 에러 처리 (try-catch)
+
+* 프로그램 내에서 에러가 발생한 상황에 대해 대응하고 이를 복구하는 과정
+
+* `Swift`에서는 런타임에 에러가 발생한 경우, 이를 처리하기 위한
+    ```
+    발생(throwing)
+    감지(catching)
+    전파(propagation)
+    조작(manipulating)
+    ```
+    을 지원하는 일급 클래스를 지원한다.
+
+```swift
+enum PhoneError: Error{
+    case unknown
+    case batteryLow(batteryLevel: Int)
+}
+
+throw PhoneError.batteryLow(batteryLevel: 20)
+
+func checkPhoneBatteryStatus(batteryLevel: Int) throws -> String{
+    guard batteryLevel != -1 else {throw PhoneError.unknown}
+    guard batteryLevel >= 20 else {
+        throw PhoneError.batteryLow(batteryLevel: 20)
+    }
+    return "배터리 상태가 정상입니다."
+}
+
+//do{
+//    try 오류 발생 가능 코드
+//} catch{
+//    처리 코드
+//}
+
+do {
+    try checkPhoneBatteryStatus(batteryLevel: -1)
+} catch PhoneError.unknown{
+    print("알 수 없는 에러입니다.")
+} catch PhoneError.batteryLow(batteryLevel: let batteryLevel){
+    print("배터리 전원 부족, 남은 배터리 \(batteryLevel)%")
+} catch {
+    print("그 외 오류 발생: \(error)")
+}
+
+do {
+    try checkPhoneBatteryStatus(batteryLevel: 15)
+} catch PhoneError.unknown{
+    print("알 수 없는 에러입니다.")
+} catch PhoneError.batteryLow(batteryLevel: let batteryLevel){
+    print("배터리 전원 부족, 남은 배터리 \(batteryLevel)%")
+} catch {
+    print("그 외 오류 발생: \(error)")
+}
+
+do {
+    try checkPhoneBatteryStatus(batteryLevel: 25)
+} catch PhoneError.unknown{
+    print("알 수 없는 에러입니다.")
+} catch PhoneError.batteryLow(batteryLevel: let batteryLevel){
+    print("배터리 전원 부족, 남은 배터리 \(batteryLevel)%")
+} catch {
+    print("그 외 오류 발생: \(error)")
+}
+
+
+let status1 = try? checkPhoneBatteryStatus(batteryLevel: -1)
+print(status1) // nil
+
+let status2 = try? checkPhoneBatteryStatus(batteryLevel: 30)
+print(status2) // Optional("배터리 상태가 정상입니다.")
+
+
+// try ! 구문은 throwing method가 error를 발생시키지 않을 거라 확신할 수 상황에서 사용
+let status3 = try! checkPhoneBatteryStatus(batteryLevel: 30)
+print(status3) // 배터리 상태가 정상입니다.
+```
+
+<hr/>
+
 
 
 
