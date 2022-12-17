@@ -1072,6 +1072,74 @@ let hello = { () -> () in
 }
 
 hello() // hello
+
+
+let helloWorld = {(name: String) -> (String) in
+    return "Hello, \(name)"
+}
+// 클로저에서는 전달인자 레이블이 사용되지 않는다.
+
+helloWorld(name: "Kim") // error
+helloWorld("Kim") // Hello, Kim
+
+func doSomething( closure: () -> ()){
+    closure()
+}
+
+doSomething { () -> () in
+    print("Hello")
+}
+
+func doSomething2() -> () -> () {
+    return { () -> () in
+        print("DoSomethingDoSomething")
+    }
+}
+
+doSomething2()()
+
+// 후행 클로저
+doSomething(){
+    print("Hi Hi")
+}
+
+doSomething{
+    print("Hi Hi")
+}
+
+func doSomething3(success: () -> (), fail: () -> ()){
+    
+}
+
+doSomething3 {
+    print("success")
+} fail: {
+    print("fail")
+}
+
+func doSomething4(closure: (Int, Int, Int) -> Int){
+    closure(1, 2, 3)
+}
+
+doSomething4(closure: { (a, b, c) in
+    return a + b + c
+})
+
+doSomething4(closure: {
+    return $0 + $1 + $2
+})
+
+doSomething4(closure: {
+    $0 + $1 + $2
+})
+
+doSomething4(){
+    $0 + $1 + $2
+}
+
+doSomething4{
+    $0 + $1 + $2
+}
 ```
 
 <!-- ```swift
