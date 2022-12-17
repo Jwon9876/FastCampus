@@ -1051,10 +1051,34 @@ print(status2) // Optional("배터리 상태가 정상입니다.")
 let status3 = try! checkPhoneBatteryStatus(batteryLevel: 30)
 print(status3) // 배터리 상태가 정상입니다.
 ```
-
 <hr/>
 
+### 클로저
 
+* 클로저는 코드에서 전달 및 사용할 수 있는 독립 기능 블록이며, 일급 객체의 역할을 할 수 있다.
+
+    * 일급 객체란 전달 인자로 보낼 수 있고, 변수/상수 등으로 저장하거나 전달할 수 있으며, 함수의 반환 값이 될 수도 있다.
+
+```swift
+{
+    (params) -> (retrunType) in // closure head
+    statement // closure body
+}
+```
+
+```swift
+let hello = { () -> () in
+    print("Hello")
+}
+
+hello() // hello
+```
+
+<!-- ```swift
+``` -->
+
+<!-- ```swift
+``` -->
 
 
 
