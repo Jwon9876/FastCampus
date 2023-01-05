@@ -1,0 +1,35 @@
+PODS:
+  - Alamofire (5.6.2)
+  - Charts (4.1.0):
+    - Charts/Core (= 4.1.0)
+  - Charts/Core (4.1.0):
+    - SwiftAlgorithms (~> 1.0)
+  - SwiftAlgorithms (1.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.4)
+  - Charts (from `https://github.com/danielgindi/Charts.git`, branch `master`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - SwiftAlgorithms
+
+EXTERNAL SOURCES:
+  Charts:
+    :branch: master
+    :git: https://github.com/danielgindi/Charts.git
+
+CHECKOUT OPTIONS:
+  Charts:
+    :commit: 203700608a6e956e591e7387d77423fa3fea6947
+    :git: https://github.com/danielgindi/Charts.git
+
+SPEC CHECKSUMS:
+  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  Charts: 354f86803d11d9c35de280587fef50d1af063978
+  SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
+
+PODFILE CHECKSUM: e542441e5d07199628eb2321d124dfd5d108b95f
+
+COCOAPODS: 1.11.3
