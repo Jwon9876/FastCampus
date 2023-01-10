@@ -19,6 +19,7 @@ class EnterEmailViewController: UIViewController{
         super.viewDidLoad()
         
         self.navigationItem.title = "이메일/비밀번호 입력하기"
+        self.navigationController?.navigationBar.tintColor = .black
         
         nextButton.layer.cornerRadius = 30
         nextButton.isEnabled = false
