@@ -88,3 +88,4 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+Part3.Intermediate/SpotifyLoginSampleApp/SpotifyLoginSampleApp/GoogleService-Info.plist
