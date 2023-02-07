@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98898E7C29929234008E8007 /* UNNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98898E7B29929234008E8007 /* UNNotificationCenter.swift */; };
 		989E00EB2991256A00420C38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989E00EA2991256A00420C38 /* AppDelegate.swift */; };
 		989E00ED2991256A00420C38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989E00EC2991256A00420C38 /* SceneDelegate.swift */; };
 		989E00F22991256A00420C38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 989E00F02991256A00420C38 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		98898E7B29929234008E8007 /* UNNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNNotificationCenter.swift; sourceTree = "<group>"; };
 		989E00E72991256A00420C38 /* DrinkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		989E00EA2991256A00420C38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		989E00EC2991256A00420C38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				989E00EA2991256A00420C38 /* AppDelegate.swift */,
 				989E00EC2991256A00420C38 /* SceneDelegate.swift */,
 				989E011A29912A2200420C38 /* AlertListViewController.swift */,
+				98898E7B29929234008E8007 /* UNNotificationCenter.swift */,
 				989E012029912F6B00420C38 /* Alert.swift */,
 				989E00F02991256A00420C38 /* Main.storyboard */,
 				989E012229913A1600420C38 /* AddAlertViewController.swift */,
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				989E00EB2991256A00420C38 /* AppDelegate.swift in Sources */,
+				98898E7C29929234008E8007 /* UNNotificationCenter.swift in Sources */,
 				989E00ED2991256A00420C38 /* SceneDelegate.swift in Sources */,
 				989E011E29912BD000420C38 /* AlertListCell.swift in Sources */,
 				989E012129912F6B00420C38 /* Alert.swift in Sources */,
