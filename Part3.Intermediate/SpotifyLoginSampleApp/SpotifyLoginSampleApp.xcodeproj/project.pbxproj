@@ -65,6 +65,7 @@
 		9884692F296C359D00DB73B1 /* SpotifyLoginSampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotifyLoginSampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		98846933296C359D00DB73B1 /* SpotifyLoginSampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyLoginSampleAppUITests.swift; sourceTree = "<group>"; };
 		98846935296C359D00DB73B1 /* SpotifyLoginSampleAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyLoginSampleAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		98D61DB22A5E42FD007D38CD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BCF28BA4522FC63CA35D816D /* Pods_SpotifyLoginSampleApp_SpotifyLoginSampleAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotifyLoginSampleApp_SpotifyLoginSampleAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBA9F2041879CD3D3CCE806A /* Pods-SpotifyLoginSampleApp-SpotifyLoginSampleAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotifyLoginSampleApp-SpotifyLoginSampleAppUITests.release.xcconfig"; path = "Target Support Files/Pods-SpotifyLoginSampleApp-SpotifyLoginSampleAppUITests/Pods-SpotifyLoginSampleApp-SpotifyLoginSampleAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +150,7 @@
 				98846912296C359C00DB73B1 /* AppDelegate.swift */,
 				98846914296C359C00DB73B1 /* SceneDelegate.swift */,
 				98846918296C359C00DB73B1 /* Main.storyboard */,
+				98D61DB22A5E42FD007D38CD /* README.md */,
 				9812C5FF296D8E530037D10D /* LoginViewController.swift */,
 				9812C601296D9EFF0037D10D /* EnterEmailViewController.swift */,
 				9884691B296C359D00DB73B1 /* Assets.xcassets */,
