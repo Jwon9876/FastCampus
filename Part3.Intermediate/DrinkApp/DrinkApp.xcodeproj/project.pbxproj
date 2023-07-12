@@ -59,6 +59,7 @@
 		989E011D29912BD000420C38 /* AlertListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertListCell.xib; sourceTree = "<group>"; };
 		989E012029912F6B00420C38 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		989E012229913A1600420C38 /* AddAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlertViewController.swift; sourceTree = "<group>"; };
+		98D61DB12A5E429A007D38CD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				989E00EA2991256A00420C38 /* AppDelegate.swift */,
+				98D61DB12A5E429A007D38CD /* README.md */,
 				989E00EC2991256A00420C38 /* SceneDelegate.swift */,
 				989E011A29912A2200420C38 /* AlertListViewController.swift */,
 				98898E7B29929234008E8007 /* UNNotificationCenter.swift */,
